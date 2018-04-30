@@ -1,0 +1,57 @@
+enum SlotID {HANDS, HEAD, TORSO, LEGS, ARMS, FEET}
+
+
+EQUIPMENT
+	int attackBonus
+	int defenseBonus
+	int criticalBonus
+	SlotID slot
+
+	tiene getters de dichas variables
+
+
+WEAPONS extends EQUIPMENT
+	setea el slot en hands
+
+todos los SHIELDS extends WEAPONS
+
+todos losDAGGER extends WEAPONS
+
+todos los SWORDS extends WEAPONS
+
+todos los AXE extends WEAPONS
+
+todos los MACE extends WEAPONS
+
+
+
+ARMOUR extends EQUIPMENT
+	No hace nada en particular... solo sirve para distinguir entre weapons y armaduras
+
+HEAD extends ARMOUR
+	setea slot en head
+
+TORSO extends ARMOUR
+	setea slot en torso
+
+LEGS extends ARMOUR
+	setea slot en legs
+
+ARMS extends ARMOUR
+	setea slot en arms
+
+FEET extends ARMOUR
+	setea slot en feet
+
+todos los HATS extends HEAD
+todos los HELMET extendes HEAD
+todos los ROBES extends TORSO
+todos los BREASTPLATES extends TORSO
+todos los ROBEBOTTOMS extends LEGS
+todos los PLATELEGS extends LEGS
+todos los GAUNTLETS extends ARMS 	(Aca pongo arms para no confundir con hands que es para armas)
+todos los GLOVES extends ARMS 		(Aca pongo arms para no confundir con hands que es para armas)
+todos los BOOTS extends FEET
+
+
+

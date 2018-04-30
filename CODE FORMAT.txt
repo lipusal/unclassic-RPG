@@ -1,0 +1,108 @@
+(Antes de que me digan que escribo sin acentos es porque el encoding se
+	rompe en la facu entonces todos los acentos imprimen caca)
+
+FORMATO A NORMALIZAR
+
+-Javadoc:
+	-Descripciones de los metodos en ingles.
+	-Evitar el uso de la segunda o primera persona, en lo posible. ("you", "I")
+		En cambio intentar usar la tercera persona y la voz pasiva.
+	-Linea en blanco entre la ultima linea de descripcion de la funcion
+		y de la primera linea de las anotaciones @param o @throws o @return,
+		si las hay. Ej:
+		/**
+		* blah blah blah
+		*
+		* @returns 42 siempre
+		*/
+		
+-Las asignaciones y comparaciones, salvo el incremento y el decremento,
+	llevan espacio entre la parte izquierda y la parte derecha.
+	
+	Ej:
+	y = 2;
+	x++;
+	z += 42;
+	if(x + 3 - 2 / (5 + y) >= 42)
+	
+	No hacer:
+	y=2;
+	y= 2;
+	y =2;
+	while(x<= 3)
+	z *=3
+	etc.
+	
+
+-Llaves que abren { en la misma linea que el parentesis que corresponda (
+	separadas por un espacio. NO hay linea en blanco entre la llave y la
+	primera linea de codigo que sigue.
+	
+	Ej:
+	if(42 == 42) {
+	return 42;
+	}
+	
+	No dejar linea en blanco entre ) y {:
+	if(false) {
+	
+	return false;
+	}
+	
+	No olvidar espacio entre ) y {:
+	if(true){
+	return true;
+	}
+	
+-Llaves que cierran } en la linea inmediatamente siguiente a la ultima linea
+	de codigo que le preced�a. No dejar linea en blanco entre una y otra.
+	
+	Ej:
+	while(true) {
+		i++;
+	}
+	
+	No dejar espacio en blanco:
+	while(true) {
+		i++;
+	
+	}
+	
+-Las expresiones encerradas en parentesis NO llevan espacio entre el parentesis
+	que abre y el que cierra, a menos que sea una expresion compleja (ej. tenga
+	3 o mas niveles de parentesis) y emprolije la lectura hacerlo.
+	
+	Ej:
+	if(game.isInCombatMode()) {
+	game.print("In combat mode");
+	}
+	
+	Ej (este es objecionable, pero a algo tenemos que llegar y ser consistentes):
+	if( ( ((Math.pow(2, Math.sqrt(3)) * (Math.pow(Math.E, Math.log(10))) + 3 ) > 42 ) {
+	System.out.println("I think you broke math");
+	}
+	
+	No hacer:
+	if( isDead() ) {
+	game.gameOver();
+	}
+	
+-Las expresiones de una sola linea que sigan a un condicional (if, while, for, etc.)
+	estan encerradas en llaves. (Nunca sabemos si le vamos a agregar mas lineas, ademas
+	es buena practica!)
+	
+-La indentacion de los SWITCH es la siguiente, aunque Eclipse no lo haga asi:
+	switch(variable) {
+		case condicion:
+			accion(es) a tomar
+			break;
+		case condicion:
+			blah
+			break;
+		.
+		.
+		.
+		default:
+			blah;
+			break;
+	}

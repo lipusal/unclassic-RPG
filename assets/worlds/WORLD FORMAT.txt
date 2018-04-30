@@ -1,0 +1,10 @@
+Format:
+
+worldWidth worldHeight
+tileID tileID tileID ... tileID (worldWidth times across)
+tileID tileID tileID ... tileID
+.
+.
+.
+tileID tileID tileID ... tileID
+(worldHeight times down)

@@ -1,0 +1,55 @@
+El juego consiste en un jugador humano que controla un personaje que va caminando por un mundo libremente. El jugador
+tiene varias habilidades que puede mejorar realizando la actividad correpondiente:
+	-Ataque: cuanto más alto nivel, más daño puede efectuar.
+	-Defensa: cuanto más alto nivel, más daño puede bloquear.
+	-Vida: cuanto más alto nivel, más puntos de vida tiene (al llegar a 0 puntos de vida, muere y pierde todo su inventario)
+	-Talar árboles (woodcutting): cuanto más alto nivel, más madera obtiene por árbol talado y se pueden talar árboles
+		más raros.
+	-Hacer fuego (firemaking): cuánto más alto nivel, mejor tipo de leña se puede usar para hacer fuego y el fuego dura
+		más tiempo.
+	-Pesca: al subir de nivel puede pescar peces más raros que curan más cuando se los come.
+	-Cocinar: al subir de nivel puede cocinar cosas más elaboradas y tiene menor probabilidad de quemar la comida.
+	-Minar: al subir de nivel puede minar mejores minerales y se obtiene más mineral por mena.
+	-Herrería (smithing): al subir de nivel puede fundir mejores metales y crear mejores armas y mejor armadura.
+
+El mundo se maneja lógicamente en casilleros, llamados Tiles, que ocupan 64x64 pixeles en pantalla cada uno. Las entidades
+del juego pueden moverse libremente por el mundo en cuatro direcciones ocupando una única Tile a la vez, siempre y cuando
+éstas no sean sólidas. El mundo tendrá varias regiones conectadas entre sí, entre las cuales el jugador puede viajar.
+En distintas regiones se podrán encontrar distintas entidades y se podrán realizar distintas actividades.
+	
+Las actividades que el jugador puede realizar incluyen:
+-Pelear: Al entrar en contacto con un Mob (ver Mobs en la siguiente sección), el juego entra en modo pelea. Se pelea
+	por turnos y al finalizar la pelea el juego vuelve al modo normal, habiendo ganado experiencia de combate.
+-Crafting: Hay ciertas armas y armadura que el jugador puede crear minando y fundiendo los metales correctos,
+	si tiene suficiente nivel de herrería.
+-Realizar las actividades apropiadas para subir de nivel en habilidades (ej. talar árboles para mejorar Woodcutting,
+	cocinar distintos tipos de peces para mejorar Cooking, minar para mejorar Mining, etc.)
+-Equipping: El jugador tiene "slots" donde puede equipar armadura y/o armas para mejorar su desempeño en batalla.
+-Item gathering: El jugador tiene un inventario limitado en el cual puede llevar items para su supervivencia.
+-Guardar y cargar el juego.
+
+Los distintos tipos de entidades incluyen:
+-Mobs contra los cuales el jugador puede pelear. Los mobs pueden seguir y atacar al jugador cuando se aproxima o no,
+	depende del mob. También pueden dejar distintos items (drops) cuando se los mata. Algunos mobs son más difíciles
+	de matar que otros. Algunos ejemplos de mobs: Goblin, Hell Knight, Rat
+-Menas que se pueden minar: Hay distintos tipos de minerales, cada cual se usa para hacer equipamiento. Cuanto
+	mejor es el mineral, mejores "stats" tiene el equipamiento que se hace con el mineral fundido.
+-Árboles que se pueden talar, hornos para fundir los minerales minados, yunques para hacer equipamiento
+	con los metales fundidos, etc. 
+-Conectores de mundos: Pueden ser invisibles o podrían ser puertas; en todo caso, cuando el jugador entra en contacto
+	con éstos, pasa a otra región del mundo.
+
+OBJETIVOS OPCIONALES:
+-Personajes con los cuales se puede hablar e interactuar (NPC's) para distintas actividades.
+-Otras criaturas pasivas que se puedan cazar o que estén de decoración.
+-Que el jugador controle un grupo de personajes; se mueven en el mundo juntos pero en las peleas se van turnando
+	para atacar.
+-Crafting de items además de armas y armadura.
+-Efectos de transición entre regiones y/o entre modo normal y modo pelea.
+-Banco para guardar items.
+-Quests.
+-Dinero con el cual comprar y vender items.
+-Pociones para mejorar vida o velocidad por un tiempo limitado.
+-Mochila para que el jugador tenga más espacio en su inventario.
+-Edificios en el mundo (ej. casas) a los cuales se pueda entrar.
+-SaveWorldTile, que guarda el juego cuando el jugador toca la Tile.

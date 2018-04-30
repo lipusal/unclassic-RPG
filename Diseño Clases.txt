@@ -1,0 +1,77 @@
+-Finalizar delegando quien hace que, quien es responsable de que (tanto las clases del juego
+	como los miembros del equipo)
+	
+-STATE:
+	-Representara cada estado distinto del juego, por ejemplo:
+			-Menu principal
+			-Cargar/guardar juego
+			-Juego normalg
+			-Modo batalla
+			-Menu de pausa en el juego?
+	-Tiene un metodo para actualizarse
+	-Tiene un metodo para dibujarse
+
+-MENUSTATE extends State:
+	
+
+-GAMESTATE extends State:
+	-Tiene:
+		-El jugador, creado en el estado de load game o new game.
+		-Una lista de todas las entidades, incluyendo al jugador.
+		-Un World.
+	-Su metodo de actualizacion actualiza todas sus entidades
+	-Su metodo de render dibuja cada entidad que corresponda.
+	-Sabe si alguna entidad esta al lado de otra
+	-Sabe si alguna posicion esta o no ocupada
+	-Maneja la interaccion entre entidades (GRAN TAREA, considerar bien)
+	-Destruye las entidades muertas y las respawnea si corresponde
+	
+-WORLD:
+	-Sabe manejar la camara
+	-Dada una entidad o no, sabe si la tiene que dibujar o no (ej si esta fuera de la camara)
+	-Sabe si alguna posicion es o no solida (si las criaturas pueden pasarle encima)
+	
+-ENTITY:
+	-Tiene:
+		-Un nombre
+		-Una skin
+		-Coordenadas
+		-Texto de examinacion
+		-Una referencia al Map para comunicarse con el
+	-Sabe dibujarse, basta con dibujar su skin
+	-Se puede examinar (devuelve el texto de examinacion)
+	-Puede decir si esta o no en un lugar en particular - isAt(Coordinates coords)
+	
+-CREATURE extends Entity:
+	-Tiene:
+		-Vida
+		-Enum de direcciones para moverse (UP, DOWN, LEFT, RIGHT)
+	-Puede atacar y ser atacado
+	-Puede morir
+	-Puede moverse (el Map decide si permite el movimiento o no)
+
+-MOB extends Creature
+	-Tiene:
+		-Un estado de aggro
+		-Una referencia al jugador? Para moverse hacia él
+	-Puede dropear un item cuando muere
+	-Puede seguir al jugador si esta aggroed
+	-Puede deambular cerca de su spawn
+
+-PLAYER extends Creature
+	-Tiene:
+		-Un set de Skills
+		-Un inventario
+	-Puede imprimir sus skills
+	-Puede imprimir su inventario
+	-Puede devolver una o varias Skills por nombre (o por número?)
+
+-ITEM:
+	interfaces:
+	_consumable
+	_equipable
+	-Tiene:
+		-Un nombre
+		-Un skin
+		-Texto de examinacion
+		
